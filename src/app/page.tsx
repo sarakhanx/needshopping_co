@@ -1,103 +1,328 @@
+import Branches from "@/components/page-components/Branches";
+import Carousel from "@/components/page-components/Carousel";
+import ContactForm from "@/components/page-components/ContactForm";
+import Header from "@/components/page-components/Header";
+import ImageGrid from "@/components/page-components/ImageGrid";
+import Maps from "@/components/page-components/Maps";
+import Story from "@/components/page-components/Story_Telling";
+import VideoReviewComponent from "@/components/page-components/Video-Review-Component";
+import { CarouselItem, YouTubeShort, BranchLocation } from "@/lib/types";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  const product: CarouselItem[] = [
+    {
+        id: 1,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกล้ามมืออาชีพ"},
+            {bullet2 : "รับประผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)กันคุณภาพสูง"},
+            {bullet3 : "รับประกันวัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากลคุณภาพสูง"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        ],
+        image: '/carousel/products/prod1.jpg'
+    },
+    {
+        id: 2,
+        title : 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกล้ามมืออาชีพ"},
+            {bullet2 : "รับประผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)กันคุณภาพสูง"},
+            {bullet3 : "รับประกันวัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากลคุณภาพสูง"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        ],
+        image: '/carousel/products/prod2.jpg'
+    },
+    {
+        id: 3,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกล้ามมืออาชีพ"},
+            {bullet2 : "รับประผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)กันคุณภาพสูง"},
+            {bullet3 : "รับประกันวัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากลคุณภาพสูง"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        ],
+        image: '/carousel/products/prod3.jpg'
+    },
+    {
+        id: 4,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกล้ามมืออาชีพ"},
+            {bullet2 : "รับประผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)กันคุณภาพสูง"},
+            {bullet3 : "รับประกันวัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากลคุณภาพสูง"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        ],
+        image: '/carousel/products/prod4.jpg'
+    },
+    {
+        id: 5,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกล้ามมืออาชีพ"},
+            {bullet2 : "รับประผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)กันคุณภาพสูง"},
+            {bullet3 : "รับประกันวัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากลคุณภาพสูง"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        ],
+        image: '/carousel/products/prod5.jpg'
+    }
+]
+  const productUpgrade: CarouselItem[] = [
+    {
+        id: 1,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงกล่อง)',
+        description: [
+            {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+            {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+            {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+            {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+            {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+            {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+            {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+            {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+        ],
+        image: '/carousel/products_upgrade/129k.jpg'
+    },
+    {
+        id: 2,
+        title : 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงกล่อง)',
+        description: [
+          {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+          {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+          {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+          {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+          {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+          {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+          {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+          {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+        ],
+        image: '/carousel/products_upgrade/159k.jpg'
+    },
+    {
+        id: 3,
+        title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงกล่อง)',
+        description: [
+          {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+          {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+          {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+          {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+          {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+          {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+          {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+          {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+        ],
+        image: '/carousel/products_upgrade/169k.jpg'
+    },
+]
+const nordict: CarouselItem[] = [
+  {
+      id: 1,
+      title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงนอร์ดิก)',
+      description: [
+          {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+          {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+          {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+          {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+          {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+          {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+          {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+          {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+      ],
+      image: '/carousel/nordict-classic/Nordic159000(เก่า).jpg'
+  },
+  {
+      id: 2,
+      title : 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงนอร์ดิก)',
+      description: [
+        {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+        {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+        {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+        {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+        {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+        {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+        {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+      ],
+      image: '/carousel/nordict-classic/Nordic159000(เก่า).jpg'
+  },
+]
+const nordictUp: CarouselItem[] = [
+  {
+      id: 1,
+      title: 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงนอร์ดิก)',
+      description: [
+          {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+          {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+          {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+          {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+          {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+          {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+          {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+          {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+          {bullet9 : "ประตูมุ้งลวดอย่างดี"},
+      ],
+      image: '/carousel/nordict-upgrade/NOR169k-up.jpg'
+  },
+  {
+      id: 2,
+      title : 'บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงนอร์ดิก)',
+      description: [
+        {bullet1 : "โครงสร้างเหล็กกัลวาไนซ์"},
+        {bullet2 : "ผนังเย็น ISOWALL แบบ Sandwich Panel (EPS โฟมแท้ หนา 2 นิ้ว)"},
+        {bullet3 : "วัสดุอุปกรณ์ใช้แบรนด์มาตรฐานระดับสากล"},
+        {bullet4 : "ขนาด 3 x 6 x 2.8 เมตร"},
+        {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
+        {bullet6 : "ระบบไฟพร้อมใช้งาน"},
+        {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
+        {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
+        {bullet9 : "ประตูมุ้งลวดอย่างดี"},
+      ],
+      image: '/carousel/nordict-upgrade/NOR-up199k.jpg'
+  },
+]
+// Dont forget to edit title, it's still rick roll lol
+const review: YouTubeShort[] = [
+  {
+    id: 1,
+    videoId: 'ONK__VZ2axc',
+    title: 'Rick Astley - Never Gonna Give You Up',
+    description: 'Never Gonna Give You Up is a song by English singer-songwriter Rick Astley. It was written by Stock Aitken Waterman and produced by Stock Aitken Waterman. It was released as the first single from his second studio album, When You\'re Gone (1987).'
+  },
+  {
+    id: 2,
+    videoId: 'HJraktrgJAY',
+    title: 'Rick Astley - Never Gonna Give You Up',
+    description: 'Never Gonna Give You Up is a song by English singer-songwriter Rick Astley. It was written by Stock Aitken Waterman and produced by Stock Aitken Waterman. It was released as the first single from his second studio album, When You\'re Gone (1987).'
+  },
+  {
+    id: 3,
+    videoId: 'CmNhxGVQ_8U',
+    title: 'Rick Astley - Never Gonna Give You Up',
+    description: 'Never Gonna Give You Up is a song by English singer-songwriter Rick Astley. It was written by Stock Aitken Waterman and produced by Stock Aitken Waterman. It was released as the first single from his second studio album, When You\'re Gone (1987).'
+  },
+  {
+    id: 4,
+    videoId: '5Qtrrv8Vk_w',
+    title: 'Rick Astley - Never Gonna Give You Up',
+    description: 'Never Gonna Give You Up is a song by English singer-songwriter Rick Astley. It was written by Stock Aitken Waterman and produced by Stock Aitken Waterman. It was released as the first single from his second studio album, When You\'re Gone (1987).'
+  },
+
+]
+
+const nk_branch: CarouselItem[] = [
+  {
+    id: 1,
+    title: 'สาขานครปฐม',
+    description: [/* ... */],
+    image: '/carousel/branches/สาขานครปฐม/Scene 1.png'
+  }
+]
+const ay_branch: CarouselItem[] = [
+  {
+    id: 1,
+    title: 'สาขาอยุธยา',
+    description: [/* ... */],
+    image: '/carousel/branches/สาขาอยุธยา/Scene 2_0.png'
+  }
+]
+const branchesData: BranchLocation[] = [
+  {
+    id: 1,
+    name: "สาขาหลัก ชลบุรี",
+    address: "10/10 หมู่ 10 อำเภอศรีราชา ชลบุรี 20110",
+    coordinates: { lat: 13.230725859467064, lng: 100.9513013244066 },
+    phone: "033166699",
+    // email: "bangkok@needshopping.co.th",
+    hours: "จันทร์-เสาร์ 08:00-18:00",
+    image: "/carousel/branches/สาขานครปฐม/Scene 1.png",
+    description: "สาขาหลักที่ให้บริการครบวงจร"
+  },
+  {
+    id: 2,
+    name: "สาขานครปฐม",
+    address: "8, 47 ตำบล ห้วยพลู อำเภอนครชัยศรี นครปฐม 73120",
+    coordinates: { lat: 13.859855652387568, lng: 100.20583784091326 },
+    phone: "0812333949",
+    // email: "chonburi@needshopping.co.th", 
+    hours: "จันทร์-เสาร์ 08:00-17:00",
+    image: "/branches/chonburi.jpg",
+    description: "สาขาภาคตะวันออก พร้อมให้บริการ"
+  },
+  {
+    id: 3,
+    name: "สาขาอยุธยา",
+    address: "อุทัย ตำบล อุทัย อำเภออุทัย จังหวัดพระนครศรีอยุธยา 13210",
+    coordinates: { lat: 14.356678948818319, lng: 100.66570102882302 },
+    phone: "0891617703",
+    // email: "chonburi@needshopping.co.th", 
+    hours: "จันทร์-เสาร์ 08:00-17:00",
+    image: "/carousel/branches/สาขาอยุธยา/Scene 2_0.png",
+    description: "สาขาภาคตะวันออก พร้อมให้บริการ"
+  }
+]
+  return (
+    <>
+    <Header/>
+    <div className="py-2 bg-gray-50 inset-shadow-sm">
+      <Story/>
     </div>
+{/* Catalog */}
+        <div
+        className="flex flex-col gap-4 mt-10 shadow-sm mb-4" 
+        id="catalog">
+          <h1 className="text-xl font-bold prompt-r text-center">บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงกล่อง)</h1>
+          <Carousel data={product}/>
+          <h1 className="text-xl font-bold prompt-r text-center">บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงกล่อง)</h1>
+          <Carousel data={productUpgrade}/>
+          <h1 className="text-xl font-bold prompt-r text-center">บ้านน็อคดาวน์สำเร็จรูป รุ่น Classic (ทรงนอร์ดิก)</h1>
+          <Carousel data={nordict}/>
+          <h1 className="text-xl font-bold prompt-r text-center">บ้านน็อคดาวน์สำเร็จรูป รุ่น Upgrade (ทรงนอร์ดิก)</h1>
+          <Carousel data={nordictUp}/>
+        </div>
+{/* Structure */}
+        <div className="flex flex-col justify-center items-center relative w-full h-full">
+        <h1 
+        id="structure"
+        className="text-4xl font-bold prompt-r mb-2" >โครงสร้าง</h1>
+        <Image src="/material/material.jpg" alt="Material" width={2000} height={2000}/>
+        </div>
+{/* Review */}
+        <div id="review" className="flex flex-col gap-4 p-10">
+          <VideoReviewComponent videos={review}/>
+        </div>
+{/* Install */}
+        <div id="install" className="shadow-xs bg-gray-50">
+        <ImageGrid
+        />
+        </div>
+{/* Branch */}
+        <div id="branches" className="flex flex-col gap-4 rounded-lg">
+          <Branches data={nk_branch}
+          title="สาขานครปฐม"
+          className=""
+          />
+          <Branches data={ay_branch}
+          title="สาขาอยุธยา"
+          className=""
+          />
+        </div>
+        <Maps locations={branchesData}/>
+{/* Contact */}
+        <div id="contact">
+        <ContactForm className=""/>
+        </div>
+    </>
   );
 }

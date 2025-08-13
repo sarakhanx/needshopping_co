@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Next.js Application
+  needshopping-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: needshopping-app
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount public folder for dynamic assets
+      - ./public:/app/public:ro
+      # Mount .env file
+      - ./.env:/app/.env:ro
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - needshopping-network
+
+  # # Cloudflare Tunnel
+  # cloudflare-tunnel:
+  #   image: cloudflare/cloudflared:latest
+  #   container_name: cloudflare-tunnel
+  #   restart: unless-stopped
+  #   command: tunnel --no-autoupdate run
+  #   environment:
+  #     # Add your tunnel token here or in .env file
+  #     - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+  #   volumes:
+  #     - ./.env:/etc/cloudflared/.env:ro
+  #   networks:
+  #     - needshopping-network
+  #   depends_on:
+  #     - needshopping-app
+
+networks:
+  needshopping-network:
+    driver: bridge
