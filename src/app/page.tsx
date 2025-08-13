@@ -226,7 +226,7 @@ const nk_branch: CarouselItem[] = [
     id: 1,
     title: 'สาขานครปฐม',
     description: [/* ... */],
-    image: '/carousel/branches/สาขานครปฐม/Scene 1.png'
+    image: '/carousel/branches/nkp/Scene 1.png'
   }
 ]
 const ay_branch: CarouselItem[] = [
@@ -234,7 +234,7 @@ const ay_branch: CarouselItem[] = [
     id: 1,
     title: 'สาขาอยุธยา',
     description: [/* ... */],
-    image: '/carousel/branches/สาขาอยุธยา/Scene 2_0.png'
+    image: '/carousel/branches/ayu/Scene 2_0.png'
   }
 ]
 const branchesData: BranchLocation[] = [
