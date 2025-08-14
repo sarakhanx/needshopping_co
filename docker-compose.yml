@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # Next.js Application
   needshopping-app:
@@ -20,22 +18,6 @@ services:
       - PORT=3000
     networks:
       - needshopping-network
-
-  # # Cloudflare Tunnel
-  # cloudflare-tunnel:
-  #   image: cloudflare/cloudflared:latest
-  #   container_name: cloudflare-tunnel
-  #   restart: unless-stopped
-  #   command: tunnel --no-autoupdate run
-  #   environment:
-  #     # Add your tunnel token here or in .env file
-  #     - TUNNEL_TOKEN=${TUNNEL_TOKEN}
-  #   volumes:
-  #     - ./.env:/etc/cloudflared/.env:ro
-  #   networks:
-  #     - needshopping-network
-  #   depends_on:
-  #     - needshopping-app
 
 networks:
   needshopping-network:
