@@ -1,6 +1,7 @@
 import Branches from "@/components/page-components/Branches";
 import Carousel from "@/components/page-components/Carousel";
 import ContactForm from "@/components/page-components/ContactForm";
+import DbdCertificate from "@/components/page-components/Dbd";
 import Header from "@/components/page-components/Header";
 import ImageGrid from "@/components/page-components/ImageGrid";
 import Maps from "@/components/page-components/Maps";
@@ -24,7 +25,7 @@ export default function Home() {
             {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
             {bullet6 : "ระบบไฟพร้อมใช้งาน"},
         ],
-        image: '/carousel/products/prod1.jpg'
+        image: '/carousel/products/sd_box/1.jpg'
     },
     {
         id: 2,
@@ -37,7 +38,7 @@ export default function Home() {
             {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
             {bullet6 : "ระบบไฟพร้อมใช้งาน"},
         ],
-        image: '/carousel/products/prod2.jpg'
+        image: '/carousel/products/sd_box/2.jpg'
     },
     {
         id: 3,
@@ -50,7 +51,7 @@ export default function Home() {
             {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
             {bullet6 : "ระบบไฟพร้อมใช้งาน"},
         ],
-        image: '/carousel/products/prod3.jpg'
+        image: '/carousel/products/sd_box/3.jpg'
     },
     {
         id: 4,
@@ -63,7 +64,7 @@ export default function Home() {
             {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
             {bullet6 : "ระบบไฟพร้อมใช้งาน"},
         ],
-        image: '/carousel/products/prod4.jpg'
+        image: '/carousel/products/sd_box/4.jpg'
     },
     {
         id: 5,
@@ -76,7 +77,7 @@ export default function Home() {
             {bullet5 : "เก็บงานละเอียดภายในเนี๊ยบ ไม่มีสายไฟลอย"},
             {bullet6 : "ระบบไฟพร้อมใช้งาน"},
         ],
-        image: '/carousel/products/prod5.jpg'
+        image: '/carousel/products/sd_box/5.jpg'
     }
 ]
   const productUpgrade: CarouselItem[] = [
@@ -140,7 +141,7 @@ const nordict: CarouselItem[] = [
           {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
           {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
       ],
-      image: '/carousel/nordict-classic/Nordic159000(เก่า).jpg'
+      image: '/carousel/nordict-classic/1.jpg'
   },
   {
       id: 2,
@@ -155,7 +156,7 @@ const nordict: CarouselItem[] = [
         {bullet7 : "ฝ้าฉาบเรียบ uPVC พร้อมฉนวนกันความร้อน และพ่นกันสนิมอย่างดี"},
         {bullet8 : "พื้น SPC แข็งแรงทนทาน ไม่บวม ไม่ยวบ"},
       ],
-      image: '/carousel/nordict-classic/Nordic159000(เก่า).jpg'
+      image: '/carousel/nordict-classic/2.jpg'
   },
 ]
 const nordictUp: CarouselItem[] = [
@@ -319,6 +320,7 @@ const branchesData: BranchLocation[] = [
           />
         </div>
         <Maps locations={branchesData}/>
+        <DbdCertificate/>
 {/* Contact */}
         <div id="contact">
         <ContactForm className=""/>
